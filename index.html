@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fingerprint Capture</title>
+</head>
+<body>
+    <h1>Fingerprint Capture</h1>
+    <button id="captureButton">Capture Fingerprint</button>
+    <canvas id="fingerprintCanvas" width="300" height="300"></canvas>
+
+    <script>
+        const captureButton = document.getElementById('captureButton');
+        const fingerprintCanvas = document.getElementById('fingerprintCanvas');
+        const ctx = fingerprintCanvas.getContext('2d');
+
+        captureButton.addEventListener('click', () => {
+            simulateFingerprintCapture();
+        });
+
+        function simulateFingerprintCapture() {
+            // Simulate fingerprint capture by drawing a random pattern on the canvas.
+            ctx.clearRect(0, 0, fingerprintCanvas.width, fingerprintCanvas.height);
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, fingerprintCanvas.width, fingerprintCanvas.height);
+
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(fingerprintCanvas.width / 2, fingerprintCanvas.height / 2, 100, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>
