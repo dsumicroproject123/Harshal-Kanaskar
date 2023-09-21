@@ -1,41 +1,15 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Fingerprint Capture</title>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fingerprint Authentication</title>
 </head>
-
 <body>
-    <py-script src = "Capture_Fingerprint.py">
+    <h1>Fingerprint Authentication</h1>
+    <button id="registerBtn">Register Fingerprint</button>
+    <button id="authenticateBtn">Authenticate with Fingerprint</button>
 
-    </py-script>
-    <h1>Fingerprint Capture</h1>
-    <button id="captureButton">Capture Fingerprint</button>
-    <canvas id="fingerprintCanvas" width="300" height="300"></canvas>
-
-    <script>
-        const captureButton = document.getElementById('captureButton');
-        const fingerprintCanvas = document.getElementById('fingerprintCanvas');
-        const ctx = fingerprintCanvas.getContext('2d');
-
-        captureButton.addEventListener('click', () => {
-            simulateFingerprintCapture();
-        });
-
-        function simulateFingerprintCapture() {
-            // Simulate fingerprint capture by drawing a random pattern on the canvas.
-            ctx.clearRect(0, 0, fingerprintCanvas.width, fingerprintCanvas.height);
-            ctx.fillStyle = 'black';
-            ctx.fillRect(0, 0, fingerprintCanvas.width, fingerprintCanvas.height);
-
-            ctx.fillStyle = 'white';
-            ctx.beginPath();
-            ctx.arc(fingerprintCanvas.width / 2, fingerprintCanvas.height / 2, 100, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
-
 </html>
